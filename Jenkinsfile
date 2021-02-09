@@ -3,16 +3,16 @@ node{
       stage('SCM Checkout'){
          git 'https://github.com/anuragjain12/java-groovy-docker'
       }
-      //stage('Build'){
+      stage('Build'){
          // Get maven home path and build
          //def mvnHome =  tool name: 'Maven 3.0.5', type: 'maven'   
-         //sh "${mvnHome}/bin/mvn package -Dmaven.test.skip=true"
-      //}       
+         sh "mvn package -Dmaven.test.skip=true"
+      }       
      
-     //stage ('Test'){
+     stage ('Test'){
         // def mvnHome =  tool name: 'Maven 3.0.5', type: 'maven'    
-         //sh "${mvnHome}/bin/mvn verify; sleep 3"
-      //}
+         sh "mvn verify; sleep 3"
+      }
       
      stage('Build Docker Image'){         
            sh "docker build -t ${dockerImageName} ."
