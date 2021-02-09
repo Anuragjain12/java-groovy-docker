@@ -19,12 +19,14 @@ node{
       }  
    
       stage('Publish Docker Image'){
-         withCredentials([string(credentialsId: 'dockerpwdAnuragjain12', variable: 'dockerPWD')]) {
-              sh "docker login -u jainanurag470 -p ${dockerPWD}"
+         withCredentials([usernamePassword(credentialsId: 'dockerpwdAnuragjain12', usernameVariable: 'USERNAME', passwordVariable: 'dockerPWD')]) {
+              //sh "docker login -u jainanurag470 -p ${dockerPWD}"
+               sh "docker login -u ${USERNAME} -p ${dockerPWD}"
          }
         sh "docker push ${dockerImageName}"
       }
       
+     // withCredentials([string(credentialsId: 'dockerpwdAnuragjain12', variable: 'dockerPWD')]
     stage('Run Docker Image'){
             def dockerContainerName = 'javadockerapp_$JOB_NAME_$BUILD_NUMBER'
             def changingPermission='sudo chmod +x stopscript.sh'
