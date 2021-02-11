@@ -3,11 +3,11 @@ node{
       stage('SCM Checkout'){
          git 'https://github.com/anuragjain12/mongo'
       }
-      //stage('Build'){
+      stage('Build'){
          // Get maven home path and build
-         //def mvnHome =  tool name: 'Maven 3.0.5', type: 'maven'   
-         //sh "mvn package -Dmaven.test.skip=true"
-      //}       
+         def mvnHome =  tool name: 'Maven 3.0.5', type: 'maven'   
+         sh "mvn package -Dmaven.test.skip=true"
+      }       
      
      //stage ('Test'){
         // def mvnHome =  tool name: 'Maven 3.0.5', type: 'maven'    
