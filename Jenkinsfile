@@ -1,7 +1,7 @@
 node{
       def dockerImageName= 'anuragjain12/mongo_$JOB_NAME:$BUILD_NUMBER'
       stage('SCM Checkout'){
-         git 'https://github.com/anuragjain12/mongo'
+         git 'https://github.com/anuragjain12/java-groovy-docker'
       }
       stage('Build'){
          // Get maven home path and build
