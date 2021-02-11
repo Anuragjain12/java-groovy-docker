@@ -1,5 +1,5 @@
 node{
-      def dockerImageName= 'jainanurag470/mongo:$BUILD_NUMBER'
+      def dockerImageName= 'registry.access.redhat.com/jainanurag470/mongo:$BUILD_NUMBER'
       stage('SCM Checkout'){
          git 'https://github.com/anuragjain12/java-groovy-docker'
       }
