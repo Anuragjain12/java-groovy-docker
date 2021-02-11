@@ -29,7 +29,7 @@ node{
      // withCredentials([string(credentialsId: 'dockerpwdAnuragjain12', variable: 'dockerPWD')]
     stage('Run Docker Image'){
             def dockerContainerName = 'mongo_$JOB_NAME_$BUILD_NUMBER'
-            def changingPermission='sudo chmod +x stopscript.sh'
+            def changingPermission='sudo chmod +x /practice/stopscript.sh'
             def scriptRunner='sudo /practice/stopscript.sh'           
             def dockerRun= "sudo docker run -p 27017:27017 -d --name ${dockerContainerName} ${dockerImageName}" 
             //withCredentials([string(credentialsId: 'deploymentserverpwd', variable: 'dpPWD')]) 
