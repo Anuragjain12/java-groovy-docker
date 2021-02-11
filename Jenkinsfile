@@ -37,7 +37,7 @@ node{
                   sh "sshpass -p ${dpPWD} ssh -o StrictHostKeyChecking=no ${USERNAME}@34.123.23.196" 
                   sh "sshpass -p ${dpPWD} scp -r stopscript.sh ${USERNAME}@34.123.23.196:/TEST" 
                   //sh "sshpass -p ${dpPWD} ssh -o StrictHostKeyChecking=no ${USERNAME}@34.123.23.196 ${changingPermission}"
-                  sh "sshpass -p ${dpPWD} ssh -o StrictHostKeyChecking=no ${USERNAME}@34.123.23.196 ${scriptRunner}"
+                  //sh "sshpass -p ${dpPWD} ssh -o StrictHostKeyChecking=no ${USERNAME}@34.123.23.196 ${scriptRunner}"
                   sh "sshpass -p ${dpPWD} ssh -o StrictHostKeyChecking=no ${USERNAME}@34.123.23.196 ${dockerRun}"
             }
             
