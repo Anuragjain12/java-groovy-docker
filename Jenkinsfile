@@ -35,7 +35,7 @@ node{
             //withCredentials([string(credentialsId: 'deploymentserverpwd', variable: 'dpPWD')]) 
             withCredentials([usernamePassword(credentialsId: 'test123456', usernameVariable: 'USERNAME', passwordVariable: 'dpPWD')]){
                   sh "sshpass -p ${dpPWD} ssh -o StrictHostKeyChecking=no ${USERNAME}@35.202.164.184" 
-                  sh "sshpass -p ${dpPWD} scp -r stopscript.sh ${USERNAME}@35.202.164.184:/home/devops" 
+                  sh "sshpass -p ${dpPWD} scp -r stopscript.sh ${USERNAME}@35.202.164.184:/home/jainanurag470" 
                   sh "sshpass -p ${dpPWD} ssh -o StrictHostKeyChecking=no ${USERNAME}@35.202.164.184 ${changingPermission}"
                   //sh "sshpass -p ${dpPWD} ssh -o StrictHostKeyChecking=no ${USERNAME}@35.202.164.184 ${scriptRunner}"
                   sh "sshpass -p ${dpPWD} ssh -o StrictHostKeyChecking=no ${USERNAME}@35.202.164.184 ${dockerRun}"
