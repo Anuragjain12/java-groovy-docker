@@ -34,11 +34,11 @@ node{
             def dockerRun= "sudo docker run -p 27017:27017 -d --name ${dockerContainerName} ${dockerImageName}" 
             //withCredentials([string(credentialsId: 'deploymentserverpwd', variable: 'dpPWD')]) 
             withCredentials([usernamePassword(credentialsId: 'test123456', usernameVariable: 'USERNAME', passwordVariable: 'dpPWD')]){
-                  sh "sshpass -p ${dpPWD} ssh -o StrictHostKeyChecking=no ${USERNAME}@34.123.23.196" 
-                  sh "sshpass -p ${dpPWD} scp -r stopscript.sh ${USERNAME}@34.123.23.196:/TEST" 
-                  sh "sshpass -p ${dpPWD} ssh -o StrictHostKeyChecking=no ${USERNAME}@34.123.23.196 ${changingPermission}"
-                  sh "sshpass -p ${dpPWD} ssh -o StrictHostKeyChecking=no ${USERNAME}@34.123.23.196 ${scriptRunner}"
-                  sh "sshpass -p ${dpPWD} ssh -o StrictHostKeyChecking=no ${USERNAME}@34.123.23.196 ${dockerRun}"
+                  sh "sshpass -p ${dpPWD} ssh -o StrictHostKeyChecking=no ${USERNAME}@35.223.138.105" 
+                  sh "sshpass -p ${dpPWD} scp -r stopscript.sh ${USERNAME}@35.223.138.105:/TEST" 
+                  sh "sshpass -p ${dpPWD} ssh -o StrictHostKeyChecking=no ${USERNAME}@35.223.138.105 ${changingPermission}"
+                  sh "sshpass -p ${dpPWD} ssh -o StrictHostKeyChecking=no ${USERNAME}@35.223.138.105 ${scriptRunner}"
+                  sh "sshpass -p ${dpPWD} ssh -o StrictHostKeyChecking=no ${USERNAME}@35.223.138.105 ${dockerRun}"
             }
             
       
